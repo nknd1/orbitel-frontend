@@ -27,7 +27,9 @@ export default {
       this.isLoading = true;
       // Симуляция асинхронного действия
       await new Promise((resolve) => setTimeout(resolve, 10000));
+      
       this.isLoading = false;
+    
     },
   },
 };
