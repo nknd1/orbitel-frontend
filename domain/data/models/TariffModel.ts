@@ -4,7 +4,7 @@ export class TariffModel {
   private _price_per_month: number;
   private _speed: string;
 
-  get speed(): string {
+  get speed(): string { 
     return this._speed;
   }
 
