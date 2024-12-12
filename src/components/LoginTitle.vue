@@ -4,6 +4,6 @@
 
 <style scoped lang="sass">
 h2
-  @apply text-center text-[#21b6fa] py-3.5 text-2xl
+  @apply text-center text-blue-500 py-3.5 text-2xl
 /* Акцентный цвет */
 </style>
