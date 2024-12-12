@@ -28,5 +28,4 @@ div
 
 a
   @apply hover:text-blue-400
-
 </style>

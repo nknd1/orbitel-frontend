@@ -32,9 +32,6 @@ ul
 
 a
   @apply hover:text-blue-300
-
-
 </style>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
