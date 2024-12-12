@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <form>
       <LoginTitle />
       <LoginInput />
@@ -8,7 +8,6 @@
         :loading="isLoading"
         @click="submitForm"
         buttonText="Войти"
-        LoginButtonComponent
       />
     </form>
   </div>
@@ -38,16 +37,19 @@ export default {
     async submitForm() {
       this.isLoading = true
 
-      await new Promise((resolve) => setTimeout(resolve, 10))
+      await new Promise((resolve) => setTimeout(resolve, 1000)) // Увеличил время для демонстрации загрузки
 
       this.isLoading = false
 
-      toast('пажжи!', {
+      toast('Успешно!', {
         theme: 'auto',
         type: 'success',
         position: 'bottom-right',
         transition: 'flip',
         dangerouslyHTMLString: true,
+        progressStyle: {
+
+        }
       })
     },
   },
@@ -55,7 +57,9 @@ export default {
 </script>
 
 <style scoped lang="sass">
+div
+  @apply flex items-center justify-center min-h-screen
 
-.container
-  @apply drop-shadow-2xl bg-[white] shadow-[#00abfa] w-[360px] p-5 rounded-lg flex flex-col items-center justify-center
+form
+  @apply bg-white shadow-lg rounded-lg p-5 w-80
 </style>
