@@ -5,10 +5,10 @@
       <nav>
         <ul>
           <li>
-            <v-btn><a href="#">Мои договоры</a></v-btn>
+          <a href="#">Мои договоры</a>
           </li>
           <li>
-            <v-btn><a href="#">Мой профиль</a></v-btn>
+            <a href="#">Мой профиль</a>
           </li>
         </ul>
       </nav>

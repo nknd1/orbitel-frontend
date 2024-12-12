@@ -15,7 +15,7 @@
 <style scoped lang="sass">
 
 footer
- @apply bg-gray-800 text-white py-4
+  @apply bg-gray-800 text-white py-4
 
 div
   @apply container mx-auto text-center
