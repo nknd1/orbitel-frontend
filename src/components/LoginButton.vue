@@ -31,7 +31,7 @@
 export default {
   props: {
     buttonText: {
-      type: St  ring,
+      type: String,
       default: 'Submit',
     },
     loading: {
