@@ -2,48 +2,42 @@
   <div>
     <form @submit.prevent="handleLogin">
       <h2>Вход в личный кабинет</h2>
-      <input type="text" v-model="login" id="login" required  placeholder="Логин" />
-      <input type="password" v-model="password" id="password" required placeholder="Пароль"/>
-      <LoginButton
-        :loading="isLoading"
-        buttonText="Войти"
-      />
+      <input type="text" v-model="login" id="login" required placeholder="Логин" />
+      <input type="password" v-model="password" id="password" required placeholder="Пароль" />
+      <LoginButton :loading="isLoading" buttonText="Войти" />
       <p v-if="error">{{ error }}</p>
     </form>
   </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
-import { useAuthStore } from '@/stores/authStore';
-import LoginButton from "@/components/LoginButton.vue";
-
-
-
+import { ref } from 'vue'
+import { useAuthStore } from '@/stores/authStore'
+import LoginButton from '@/components/LoginButton.vue'
 
 export default {
-  components: {LoginButton},
-  data(){return{ isLoading: false,}},
+  components: { LoginButton },
+  data() {
+    return { isLoading: false }
+  },
   setup() {
-    const authStore = useAuthStore();
-    const login = ref('');
-    const password = ref('');
-    const error = ref('');
+    const authStore = useAuthStore()
+    const login = ref('')
+    const password = ref('')
+    const error = ref('')
 
     const handleLogin = async () => {
-
       try {
-
-        await authStore.login(login.value, password.value);
+        await authStore.login(login.value, password.value)
         // Редирект или действие после успешного входа
       } catch (err) {
-        error.value = 'Неверный логин или пароль.';
+        error.value = 'Неверный логин или пароль.'
       }
-    };
+    }
 
-    return { login, password, handleLogin, error };
+    return { login, password, handleLogin, error }
   },
-};
+}
 </script>
 
 <style scoped lang="sass">
