@@ -1,5 +1,5 @@
 <template>
-  <button :class="buttonClasses" :disabled="loading" @click="handleClick">
+  <button :class="buttonClasses" :disabled="loading" @click="handleClick" type="submit">
     <span v-if="loading" class="flex items-center">
       <svg
         class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"

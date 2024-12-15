@@ -1,59 +1,49 @@
 <template>
   <div>
-    <form>
-      <LoginTitle />
-      <LoginInput />
-      <PasswordInput />
+    <form @submit.prevent="handleLogin">
+      <h2>Вход в личный кабинет</h2>
+      <input type="text" v-model="login" id="login" required  placeholder="Логин" />
+      <input type="password" v-model="password" id="password" required placeholder="Пароль"/>
       <LoginButton
         :loading="isLoading"
-        @click="submitForm"
         buttonText="Войти"
       />
+      <p v-if="error">{{ error }}</p>
     </form>
   </div>
 </template>
 
 <script lang="ts">
-import { toast } from 'vue3-toastify'
-import 'vue3-toastify/dist/index.css'
-import LoginInput from '@/components/LoginInput.vue'
-import PasswordInput from '@/components/PasswordInput.vue'
-import LoginButton from '@/components/LoginButton.vue'
-import LoginTitle from '@/components/LoginTitle.vue'
+import { ref } from 'vue';
+import { useAuthStore } from '@/stores/authStore';
+import LoginButton from "@/components/LoginButton.vue";
+
+
+
 
 export default {
-  components: {
-    LoginTitle,
-    LoginButton,
-    PasswordInput,
-    LoginInput,
+  components: {LoginButton},
+  data(){return{ isLoading: false,}},
+  setup() {
+    const authStore = useAuthStore();
+    const login = ref('');
+    const password = ref('');
+    const error = ref('');
+
+    const handleLogin = async () => {
+
+      try {
+
+        await authStore.login(login.value, password.value);
+        // Редирект или действие после успешного входа
+      } catch (err) {
+        error.value = 'Неверный логин или пароль.';
+      }
+    };
+
+    return { login, password, handleLogin, error };
   },
-  data() {
-    return {
-      isLoading: false,
-    }
-  },
-  methods: {
-    async submitForm() {
-      this.isLoading = true
-
-      await new Promise((resolve) => setTimeout(resolve, 1000)) // Увеличил время для демонстрации загрузки
-
-      this.isLoading = false
-
-      toast('Успешно!', {
-        theme: 'auto',
-        type: 'success',
-        position: 'bottom-right',
-        transition: 'flip',
-        dangerouslyHTMLString: true,
-        progressStyle: {
-
-        }
-      })
-    },
-  },
-}
+};
 </script>
 
 <style scoped lang="sass">
@@ -62,4 +52,10 @@ div
 
 form
   @apply bg-white shadow-lg rounded-lg p-5 w-80
+
+input
+  @apply w-full mx-0 my-2.5 border-solid text-2xl p-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed
+
+h2
+  @apply text-center text-blue-500 py-3.5 text-2xl
 </style>
