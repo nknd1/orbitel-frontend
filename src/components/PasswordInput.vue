@@ -1,7 +1,35 @@
-<script setup lang="ts"></script>
+<script lang="ts">
+export default {
+  data() {
+    return {
+      showPassword: false,
+      password: null
+    };
+  },
+  computed: {
+    buttonLabel() {
+      return (this.showPassword) ? "Hide" : "Show";
+    }
+  },
+  methods: {
+    toggleShow() {
+      this.showPassword = !this.showPassword;
+    }
+  }
+};
+</script>
 
 <template>
-  <input type="password" placeholder="Пароль" required />
+      <input v-if="showPassword" type="text" class="input" v-model="password" />
+      <input v-else type="password" class="input" v-model="password">
+  <div class="control">
+    <button class="button" @click="toggleShow"><span class="icon is-small is-right">
+            <i class="fas" :class="{ 'fa-eye-slash': showPassword, 'fa-eye': !showPassword }"></i>
+          </span>
+    </button>
+  </div>
+
+
 </template>
 
 <style scoped lang="sass">
