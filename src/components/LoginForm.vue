@@ -1,9 +1,9 @@
 <template>
   <div>
     <form @submit.prevent="handleLogin">
-      <h2>Вход в личный кабинет</h2>
-      <input type="text" v-model="login" id="login" required placeholder="Логин" />
-      <input type="password" v-model="password" id="password" required placeholder="Пароль" />
+      <LoginTitle/>
+      <LoginInput v-model="login"/>
+      <PasswordInput v-model="password"/>
       <LoginButton :loading="isLoading" buttonText="Войти" />
       <p v-if="error">{{ error }}</p>
     </form>
@@ -14,24 +14,33 @@
 import { ref } from 'vue'
 import { useAuthStore } from '@/stores/authStore'
 import LoginButton from '@/components/LoginButton.vue'
+import LoginInput from "@/components/LoginInput.vue";
+import LoginTitle from "@/components/LoginTitle.vue";
+import PasswordInput from "@/components/PasswordInput.vue";
+
+
 
 export default {
-  components: { LoginButton },
+  components: {PasswordInput, LoginTitle, LoginInput, LoginButton },
   data() {
     return { isLoading: false }
   },
   setup() {
-    const authStore = useAuthStore()
-    const login = ref('')
-    const password = ref('')
-    const error = ref('')
+    const authStore = useAuthStore();
+    const login = ref('');
+    const password = ref('');
+    const error = ref('');
 
     const handleLogin = async () => {
       try {
-        await authStore.login(login.value, password.value)
+        await authStore.login(login.value, password.value);
+
         // Редирект или действие после успешного входа
       } catch (err) {
-        error.value = 'Неверный логин или пароль.'
+        error.value = 'Неверный логин или пароль'
+      }
+      finally {
+        error.value = 'Ошибка сервера';
       }
     }
 
