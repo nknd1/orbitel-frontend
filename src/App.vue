@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import LoginForm from './components/LoginForm.vue'
+import LoginForm from './components/LoginView.vue'
 </script>
 
 <style scoped lang="sass"></style>

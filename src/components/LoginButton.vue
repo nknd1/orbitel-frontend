@@ -1,5 +1,5 @@
 <template>
-  <button :class="buttonClasses" :disabled="loading" @click="handleClick" type="submit">
+  <button :class="buttonClasses" :disabled="loading" @click="handleClick" type="submit" class="cursor-pointer w-full py-3.5 my-5 border-[none] bg-blue-500 size-12">
     <span v-if="loading" class="flex items-center">
       <svg
         class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
@@ -55,6 +55,5 @@ export default {
 </script>
 
 <style scoped lang="sass">
-button
-  @apply cursor-pointer w-full py-3.5 my-5 border-[none] bg-blue-500 size-12
+
 </style>
