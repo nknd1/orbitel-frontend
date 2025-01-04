@@ -1,9 +1,10 @@
 <template>
-  <NavBar/>
+  <NavigationBar/>
 </template>
 
 <script setup lang="ts">
 import LoginForm from './components/LoginView.vue'
+import NavigationBar from "@/components/NavBar.vue";
 </script>
 
 <style scoped lang="sass"></style>

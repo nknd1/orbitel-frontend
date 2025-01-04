@@ -50,11 +50,21 @@ export default {
 }
 
 /* Стили для мобильных устройств */
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
 .mobile-nav ul {
   display: flex;
   justify-content: space-around;
   list-style: none;
-  padding: 0;
+  padding: 10px 0;
   margin: 0;
 }
 
