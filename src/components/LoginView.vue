@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen">
-    <form @submit.prevent="handleLogin" class="bg-white shadow-lg rounded-lg p-5 w-80">
+  <div>
+    <form @submit.prevent="handleLogin">
       <LoginTitle />
       <LoginInput v-model="login" />
       <PasswordInput v-model="password" />
@@ -17,7 +17,6 @@ import LoginButton from '@/components/LoginButton.vue'
 import LoginInput from '@/components/LoginInput.vue'
 import LoginTitle from '@/components/LoginTitle.vue'
 import PasswordInput from '@/components/PasswordInput.vue'
-
 
 export default {
   components: { PasswordInput, LoginTitle, LoginInput, LoginButton },
@@ -38,7 +37,6 @@ export default {
       } catch (err) {
         error.value = 'Неверный логин или пароль'
       } finally {
-
         error.value = 'Ошибка сервера'
       }
     }
@@ -49,5 +47,9 @@ export default {
 </script>
 
 <style scoped lang="sass">
+div
+  @apply flex items-center justify-center min-h-screen
 
+form
+  @apply bg-white shadow-lg rounded-lg p-5 w-80
 </style>

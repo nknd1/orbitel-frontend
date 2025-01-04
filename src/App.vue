@@ -1,5 +1,5 @@
 <template>
-  <LoginForm />
+  <NavBar/>
 </template>
 
 <script setup lang="ts">
