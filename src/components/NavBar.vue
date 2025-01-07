@@ -3,18 +3,18 @@
     <!-- Навигационная панель для ПК -->
     <nav v-if="!isMobile" class="desktop-nav">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Contracts</a></li>
-        <li><a href="#">Settings</a></li>
+        <li><a href="#">Мои договоры</a></li>
+        <li><a href="#">Профиль</a></li>
+        <li><a href="#">Настройки</a></li>
       </ul>
     </nav>
 
     <!-- Навигационная панель для мобильных устройств -->
     <nav v-else class="mobile-nav">
       <ul>
-        <li><a href="#">🏠</a></li>
-        <li><a href="#">📄</a></li>
-        <li><a href="#">⚙️</a></li>
+        <li><a href="#">Мои договоры</a></li>
+        <li><a href="#">Профиль</a></li>
+        <li><a href="#">Настройки</a></li>
       </ul>
     </nav>
   </div>
@@ -39,6 +39,7 @@ export default {
 .desktop-nav ul {
   display: flex;
   gap: 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 0;
   margin: 0;
