@@ -1,9 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import type { RouteRecordRaw } from "vue-router";
 import ContractsList from "@/components/ContractsList.vue";
 import ContractDetails from "@/components/ContractDetails.vue";
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: "/contracts",
     name: "ContractsList",
@@ -13,12 +12,12 @@ const routes: Array<RouteRecordRaw> = [
     path: "/contracts/:id",
     name: "ContractDetails",
     component: ContractDetails,
-    props: true, // Передача параметров как props
+    props: true,
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 

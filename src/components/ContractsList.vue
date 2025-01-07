@@ -48,11 +48,9 @@ export default defineComponent({
   margin: 0 auto;
   padding: 20px;
 }
-
 .contract-item {
   margin-bottom: 15px;
 }
-
 .contract-info {
   padding: 15px;
   border: 1px solid #ddd;
@@ -61,23 +59,15 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease;
 }
-
-.contract-info:hover {
-  background-color: #f0f0f0;
-}
-
 .details-button {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
   padding: 8px 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
 }
-
 .details-button:hover {
   background-color: #0056b3;
 }
