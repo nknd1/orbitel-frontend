@@ -1,22 +1,22 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import { useRouter } from "vue-router"; // Импорт useRouter
+import { useRouter } from "vue-router"; // Используем useRouter для получения маршрутизатора
 import type { Contract } from "@/mock/contractsMock";
 import { contractsMock } from "@/mock/contractsMock";
 
 export default defineComponent({
   name: "ContractsList",
   setup() {
-    const contracts = ref<Contract[]>(contractsMock); // Список договоров
-    const router = useRouter(); // Доступ к маршрутизатору
+    const contracts = ref<Contract[]>(contractsMock); // Моковые данные договоров
+    const router = useRouter(); // Получаем экземпляр маршрутизатора через useRouter
 
     const goToDetails = (id: number) => {
-      router.push(`/contracts/${id}`); // Переход к деталям договора
+      router.push(`/contracts/${id}`); // Переход по маршруту, используя router.push
     };
 
     return {
       contracts,
-      goToDetails,
+      goToDetails, // Функция для перехода
     };
   },
 });
@@ -34,7 +34,7 @@ export default defineComponent({
             class="details-button"
             @click="goToDetails(contract.id)"
           >
-            Подробнее
+          Подробнее
           </button>
         </div>
       </li>

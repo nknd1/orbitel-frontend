@@ -1,15 +1,17 @@
 <script lang="ts">
 import { defineComponent, computed } from "vue";
 import { useRoute } from "vue-router";
-import type { Contract } from "@/mock/contractsMock";
 import { contractsMock } from "@/mock/contractsMock";
+
+// Импорт типа Contract для правильной типизации
+import type { Contract } from "@/mock/contractsMock";
 
 export default defineComponent({
   name: "ContractDetails",
   setup() {
     const route = useRoute();
     const contractId = computed(() => Number(route.params.id)); // Получение id из маршрута
-    const contract = computed(() =>
+    const contract = computed<Contract | undefined>(() =>
       contractsMock.find((c) => c.id === contractId.value)
     );
 
@@ -25,7 +27,6 @@ export default defineComponent({
     <h1>Детали договора</h1>
     <p><strong>Номер договора:</strong> {{ contract.contractNumber }}</p>
     <p><strong>Тариф:</strong> {{ contract.tariff }}</p>
-    <p><strong>Описание:</strong> {{ contract.description }}</p>
     <router-link to="/contracts">
       <button class="back-button">Назад к списку</button>
     </router-link>

@@ -4,6 +4,10 @@ import ContractDetails from "@/components/ContractDetails.vue";
 
 const routes = [
   {
+    path: "/",
+    redirect: "/contracts", // Редирект на страницу списка договоров
+  },
+  {
     path: "/contracts",
     name: "ContractsList",
     component: ContractsList,
@@ -12,7 +16,7 @@ const routes = [
     path: "/contracts/:id",
     name: "ContractDetails",
     component: ContractDetails,
-    props: true,
+    props: true, // Передача параметров как props
   },
 ];
 
