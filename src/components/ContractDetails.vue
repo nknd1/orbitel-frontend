@@ -1,39 +1,32 @@
-<script lang="ts">
-import { defineComponent, computed } from "vue";
-import { useRoute } from "vue-router";
-import { contractsMock } from "@/mock/contractsMock";
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { contractsMock } from '@/mock/contractsMock'
 
-// Импорт типа Contract для правильной типизации
-import type { Contract } from "@/mock/contractsMock";
+// Импорт типа Contract для типизации
+import type { Contract } from '@/mock/contractsMock'
 
-export default defineComponent({
-  name: "ContractDetails",
-  setup() {
-    const route = useRoute();
-    const contractId = computed(() => Number(route.params.id)); // Получение id из маршрута
-    const contract = computed<Contract | undefined>(() =>
-      contractsMock.find((c) => c.id === contractId.value)
-    );
+// Получение параметров маршрута
+const route = useRoute()
 
-    return {
-      contract,
-    };
-  },
-});
+// Получение ID договора из параметров маршрута
+const contractId = computed(() => Number(route.params.id))
+
+// Поиск договора в моковых данных
+const contract = computed<Contract | undefined>(() =>
+  contractsMock.find((c) => c.id === contractId.value),
+)
 </script>
 
 <template>
-  <div v-if="contract" class="contract-details">
+  <v-card v-if="contract" class="contract-details">
     <h1>Детали договора</h1>
     <p><strong>Номер договора:</strong> {{ contract.contractNumber }}</p>
     <p><strong>Тариф:</strong> {{ contract.tariff }}</p>
     <router-link to="/contracts">
-      <button class="back-button">Назад к списку</button>
+      <v-btn class="back-button">Назад к списку</v-btn>
     </router-link>
-  </div>
-  <div v-else>
-    <p>Договор не найден.</p>
-  </div>
+  </v-card>
 </template>
 
 <style scoped>

@@ -1,13 +1,12 @@
 <template>
-  <NavigationBar/>
-  <ContractsList/>
-  <ContractDetails/>
+  <NavBar />
+  <br>
+  <RouterView />
 </template>
 
 <script setup lang="ts">
-import NavigationBar from "@/components/NavBar.vue";
-import ContractsList from "@/components/ContractsList.vue";
-import ContractDetails from "@/components/ContractDetails.vue";
+
+import NavBar from '@/components/NavBar.vue'
 </script>
 
 <style scoped lang="sass"></style>

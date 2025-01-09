@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-toolbar>
     <!-- Навигационная панель для ПК -->
     <nav v-if="!isMobile" class="desktop-nav">
       <ul>
@@ -17,21 +17,14 @@
         <li><a href="#">Настройки</a></li>
       </ul>
     </nav>
-  </div>
+  </v-toolbar>
 </template>
 
-<script lang="ts">
-import { ref } from 'vue';
-import { useMediaQuery } from '@vueuse/core';
+<script setup lang="ts">
+import { useMediaQuery } from '@vueuse/core'
 
-export default {
-  name: 'NavigationBar',
-  setup() {
-    // Проверяем, мобильный ли экран
-    const isMobile = useMediaQuery('(max-width: 768px)');
-    return { isMobile };
-  },
-};
+// Проверяем, мобильный ли экран
+const isMobile = useMediaQuery('(max-width: 768px)')
 </script>
 
 <style scoped>

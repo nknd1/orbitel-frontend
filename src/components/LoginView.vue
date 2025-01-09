@@ -5,12 +5,12 @@
       <LoginInput v-model="login" />
       <PasswordInput v-model="password" />
       <LoginButton :loading="isLoading" buttonText="Войти" />
-      <p v-if="error">{{ error }}</p>
+      <p v-if="error" class="error-message">{{ error }}</p>
     </form>
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue'
 import { useAuthStore } from '@/stores/authStore'
 import LoginButton from '@/components/LoginButton.vue'
@@ -18,38 +18,40 @@ import LoginInput from '@/components/LoginInput.vue'
 import LoginTitle from '@/components/LoginTitle.vue'
 import PasswordInput from '@/components/PasswordInput.vue'
 
-export default {
-  components: { PasswordInput, LoginTitle, LoginInput, LoginButton },
-  data() {
-    return { isLoading: false }
-  },
-  setup() {
-    const authStore = useAuthStore()
-    const login = ref('')
-    const password = ref('')
-    const error = ref('')
+// Использование состояния из Pinia
+const authStore = useAuthStore()
 
-    const handleLogin = async () => {
-      try {
-        await authStore.login(login.value, password.value)
+// Локальные состояния
+const login = ref('')
+const password = ref('')
+const error = ref('')
+const isLoading = ref(false)
 
-        // Редирект или действие после успешного входа
-      } catch (err) {
-        error.value = 'Неверный логин или пароль'
-      } finally {
-        error.value = 'Ошибка сервера'
-      }
-    }
+// Функция обработки логина
+const handleLogin = async () => {
+  isLoading.value = true // Отображаем индикатор загрузки
+  error.value = '' // Сбрасываем ошибку
 
-    return { login, password, handleLogin, error }
-  },
+  try {
+    await authStore.login(login.value, password.value)
+
+    // Редирект или действие после успешного входа
+    console.log('Успешный вход')
+  } catch (err) {
+    error.value = 'Неверный логин или пароль'
+  } finally {
+    isLoading.value = false // Скрываем индикатор загрузки
+  }
 }
 </script>
 
 <style scoped lang="sass">
 div
-  @apply flex items-center justify-center min-h-screen
+  @apply flex items-center justify-center min-h-screen bg-gray-100
 
 form
   @apply bg-white shadow-lg rounded-lg p-5 w-80
+
+.error-message
+  @apply text-red-500 mt-2 text-sm
 </style>

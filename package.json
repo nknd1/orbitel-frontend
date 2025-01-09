@@ -18,6 +18,7 @@
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "pinia": "^2.2.6",
+    "update": "^0.7.4",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5",
     "vue3-smart-captcha": "^1.1.0",

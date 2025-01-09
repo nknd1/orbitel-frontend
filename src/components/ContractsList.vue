@@ -1,45 +1,35 @@
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-import { useRouter } from "vue-router"; // Используем useRouter для получения маршрутизатора
-import type { Contract } from "@/mock/contractsMock";
-import { contractsMock } from "@/mock/contractsMock";
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router' // Импортируем useRouter для работы с маршрутизацией
+import type { Contract } from '@/mock/contractsMock'
+import { contractsMock } from '@/mock/contractsMock'
 
-export default defineComponent({
-  name: "ContractsList",
-  setup() {
-    const contracts = ref<Contract[]>(contractsMock); // Моковые данные договоров
-    const router = useRouter(); // Получаем экземпляр маршрутизатора через useRouter
+// Моковые данные договоров
+const contracts = ref<Contract[]>(contractsMock)
 
-    const goToDetails = (id: number) => {
-      router.push(`/contracts/${id}`); // Переход по маршруту, используя router.push
-    };
+// Экземпляр маршрутизатора
+const router = useRouter()
 
-    return {
-      contracts,
-      goToDetails, // Функция для перехода
-    };
-  },
-});
+// Функция для перехода на страницу деталей договора
+const goToDetails = (id: number) => {
+  router.push(`/contracts/${id}`)
+}
 </script>
 
 <template>
-  <div class="contracts-list">
+  <v-card class="contracts-list">
     <h1>Список договоров</h1>
     <ul>
       <li v-for="contract in contracts" :key="contract.id" class="contract-item">
         <div class="contract-info">
           <h3>Номер договора: {{ contract.contractNumber }}</h3>
           <p>Тариф: {{ contract.tariff }}</p>
-          <button
-            class="details-button"
-            @click="goToDetails(contract.id)"
-          >
-          Подробнее
-          </button>
+
+          <v-btn class="details-button" @click="goToDetails(contract.id)">Подробнее</v-btn>
         </div>
       </li>
     </ul>
-  </div>
+  </v-card>
 </template>
 
 <style scoped>

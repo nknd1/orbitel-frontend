@@ -8,8 +8,7 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { SmartCaptchaPlugin } from 'vue3-smart-captcha'
 import App from './App.vue'
-import router from "@/router";
-
+import router from '@/router'
 
 const vuetify = createVuetify({
   components,
