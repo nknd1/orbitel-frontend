@@ -19,8 +19,7 @@ const contract = computed<Contract | undefined>(() =>
 </script>
 
 <template>
-  <v-card v-if="contract" class="contract-details">
-    <h1>Детали договора</h1>
+  <v-card v-if="contract" class="contract-details" title="Детали договора">
     <p><strong>Номер договора:</strong> {{ contract.contractNumber }}</p>
     <p><strong>Тариф:</strong> {{ contract.tariff }}</p>
     <router-link to="/contracts">
@@ -42,6 +41,7 @@ const contract = computed<Contract | undefined>(() =>
   background-color: #007bff;
   color: white;
   border: none;
+  margin-top: 10px;
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 5px;

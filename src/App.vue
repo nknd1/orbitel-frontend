@@ -1,5 +1,5 @@
 <template>
-  <NavBar />
+  <NavBar/>
   <br>
   <RouterView />
 </template>
@@ -7,6 +7,7 @@
 <script setup lang="ts">
 
 import NavBar from '@/components/NavBar.vue'
+
 </script>
 
 <style scoped lang="sass"></style>
