@@ -1,13 +1,11 @@
 <template>
-
-
   <v-toolbar>
     <!-- Навигационная панель для ПК -->
     <nav v-if="!isMobile" class="desktop-nav">
       <ul>
         <li><a href="contracts">Мои договоры</a></li>
-        <li><a href="#">Профиль</a></li>
         <li><a href="#">Настройки</a></li>
+        <li><a href="logout">Выйти</a></li>
       </ul>
     </nav>
 
@@ -19,22 +17,13 @@
         active
       >
         <v-btn>
-          <v-icon>mdi-history</v-icon>
-
-          Recents
+            <li><a href="contracts">Мои договоры</a></li>
         </v-btn>
 
         <v-btn>
-          <v-icon>mdi-heart</v-icon>
-
-          Favorites
+          <li><a href="#">Настройки</a></li>
         </v-btn>
 
-        <v-btn>
-          <v-icon>mdi-map-marker</v-icon>
-
-          <span>Nearby</span>
-        </v-btn>
       </v-bottom-navigation>
     </v-layout>
   </v-toolbar>
