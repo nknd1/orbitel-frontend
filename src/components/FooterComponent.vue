@@ -12,20 +12,36 @@
   </footer>
 </template>
 
-<style scoped lang="sass">
+<style scoped>
+footer {
+  background-color: #1f2937; /* bg-gray-800 */
+  color: white; /* text-white */
+  padding-top: 1rem; /* py-4 */
+  padding-bottom: 1rem;
+}
 
-footer
-  @apply bg-gray-800 text-white py-4
+footer div {
+  max-width: 1280px; /* container */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto;
+  text-align: center; /* text-center */
+}
 
-div
-  @apply container mx-auto text-center
+footer p {
+  margin-bottom: 0.5rem; /* mb-2 */
+}
 
-p
-  @apply mb-2
+footer div:last-child {
+  display: flex; /* flex */
+  justify-content: center; /* justify-center */
+  gap: 1rem; /* space-x-4 */
+}
 
-div
-  @apply flex justify-center space-x-4
+footer a {
+  transition: color 0.3s;
+}
 
-a
-  @apply hover:text-blue-400
+footer a:hover {
+  color: #60a5fa; /* hover:text-blue-400 */
+}
 </style>

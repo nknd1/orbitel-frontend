@@ -54,10 +54,21 @@ export default {
 }
 </script>
 
-<style scoped lang="sass">
-button
-  @apply cursor-pointer w-full py-3.5 my-5 border-[none] bg-blue-500 size-12
+<style scoped>
+button {
+  cursor: pointer; /* cursor-pointer */
+  width: 100%; /* w-full */
+  padding-top: 0.875rem; /* py-3.5 (14px) */
+  padding-bottom: 0.875rem;
+  margin-top: 1.25rem; /* my-5 */
+  margin-bottom: 1.25rem;
+  border: none; /* border-[none] */
+  background-color: #3b82f6; /* bg-blue-500 */
+  font-size: 12px; /* size-12 */
+}
 
-span
-  @apply flex items-center
+span {
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+}
 </style>

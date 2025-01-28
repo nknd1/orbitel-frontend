@@ -9,10 +9,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   css: {
     preprocessorOptions: {
-      sass: {
-        api: 'modern',
-      }
-
+  
     }
   },
   plugins: [
