@@ -19,22 +19,40 @@
   </header>
 </template>
 
-<style scoped lang="sass">
+<style scoped>
+header {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: white; /* text-white */
+  padding: 1rem; /* p-4 */
+}
 
-header
-  @apply bg-blue-600 text-white p-4
+header div {
+  max-width: 1280px; /* container */
+  margin-left: auto; /* mx-auto */
+  margin-right: auto;
+  display: flex; /* flex */
+  justify-content: space-between; /* justify-between */
+  align-items: center; /* items-center */
+}
 
-div
-  @apply container mx-auto flex justify-between items-center
+header h1 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+}
 
-h1
-  @apply text-2xl font-bold
+header ul {
+  display: flex; /* flex */
+  gap: 1rem; /* space-x-4 */
+}
 
-ul
-  @apply flex space-x-4
+header a {
+  transition: color 0.3s;
+}
 
-a
-  @apply hover:text-blue-300
+header a:hover {
+  color: #93c5fd; /* hover:text-blue-300 */
+}
 </style>
+
 
 <script setup lang="ts"></script>

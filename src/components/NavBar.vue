@@ -8,14 +8,11 @@
         <li><a href="logout">Выйти</a></li>
       </ul>
     </nav>
+    
 
     <!-- Навигационная панель для мобильных устройств -->
     <v-layout v-else class="mobile-nav" style="height: 56px;">
-      <v-bottom-navigation
-        v-model="value"
-        color="primary"
-        active
-      >
+      <v-bottom-navigation>
         <v-btn>
             <li><a href="contracts">Мои договоры</a></li>
         </v-btn>
@@ -27,17 +24,6 @@
       </v-bottom-navigation>
     </v-layout>
   </v-toolbar>
-
-
-  <!-- Навигационная панель для мобильных устройств
-  <nav v-else class="mobile-nav">
-    <ul>
-      <li><a href="#">Мои договоры</a></li>
-      <li><a href="#">Профиль</a></li>
-      <li><a href="#">Настройки</a></li>
-    </ul>
-  </nav>
-  -->
 </template>
 
 <script setup lang="ts">
