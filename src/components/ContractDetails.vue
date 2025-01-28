@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { contractsMock } from '@/mock/contractsMock'
-
+import Card from 'primevue/card';
 // Импорт типа Contract для типизации
 import type { Contract } from '@/mock/contractsMock'
 
