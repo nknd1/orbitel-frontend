@@ -21,7 +21,7 @@ export const routes = [
   },
   {
     path: '/logout',
-     name: 'LoginView',
+    name: 'LoginView',
     component: LoginView
   }
 
