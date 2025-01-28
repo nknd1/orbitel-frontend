@@ -17,17 +17,17 @@ const goToDetails = (id: number) => {
 </script>
 
 <template>
-  <v-card class="contracts-list" title="Мои договоры">
+  <q-card>
     <ul>
       <li v-for="contract in contracts" :key="contract.id" class="contract-item">
         <div class="contract-info">
           <h3>Номер договора: {{ contract.contractNumber }}</h3>
           <p>Тариф: {{ contract.tariff }}</p>
-          <v-btn class="details-button" @click="goToDetails(contract.id)">Подробнее</v-btn>
+          <q-btn class="details-button" @click="goToDetails(contract.id)">Подробнее</q-btn>
         </div>
       </li>
     </ul>
-  </v-card>
+  </q-card>
 </template>
 
 <style scoped>

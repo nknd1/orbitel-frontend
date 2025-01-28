@@ -8,11 +8,11 @@
         <li><a href="logout">Выйти</a></li>
       </ul>
     </nav>
-    
+
 
     <!-- Навигационная панель для мобильных устройств -->
-    <v-layout v-else class="mobile-nav" style="height: 56px;">
-      <v-bottom-navigation>
+    <div v-else class="mobile-nav" style="height: 56px;">
+      <q-tabs>
         <v-btn>
             <li><a href="contracts">Мои договоры</a></li>
         </v-btn>
@@ -21,8 +21,8 @@
           <li><a href="#">Настройки</a></li>
         </v-btn>
 
-      </v-bottom-navigation>
-    </v-layout>
+      </q-tabs>
+    </div>
   </v-toolbar>
 </template>
 

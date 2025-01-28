@@ -19,13 +19,13 @@ const contract = computed<Contract | undefined>(() =>
 </script>
 
 <template>
-  <v-card v-if="contract" class="contract-details" title="Детали договора">
+  <q-card v-if="contract" class="contract-details" title="Детали договора">
     <p><strong>Номер договора:</strong> {{ contract.contractNumber }}</p>
     <p><strong>Тариф:</strong> {{ contract.tariff }}</p>
     <router-link to="/contracts">
-      <v-btn class="back-button">Назад к списку</v-btn>
+      <q-btn class="back-button">Назад к списку</q-btn>
     </router-link>
-  </v-card>
+  </q-card>
 </template>
 
 <style scoped>
