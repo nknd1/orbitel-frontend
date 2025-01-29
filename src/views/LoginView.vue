@@ -43,7 +43,7 @@ const handleLogin = async () => {
     error.value = 'Неверный логин или пароль'
   } finally {
     isLoading.value = false // Скрываем индикатор загрузки
-    error.value = 'Неверны'
+    error.value = 'Ошибка сервера'
   }
 }
 </script>

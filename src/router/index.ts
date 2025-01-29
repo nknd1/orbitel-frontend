@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ContractsList from '@/components/ContractsList.vue'
 import ContractDetails from '@/components/ContractDetails.vue'
-import LoginView from '@/components/LoginView.vue'
+import LoginView from '@/views/LoginView.vue'
 
 export const routes = [
   {

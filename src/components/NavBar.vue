@@ -14,11 +14,10 @@
     <div v-else class="mobile-nav" style="height: 56px;">
       <div>
         <button>
-            <li><a href="contracts">Мои договоры</a></li>
+            <a href="contracts">Мои договоры</a>
         </button>
-
         <button>
-          <li><a href="#">Настройки</a></li>
+          <a href="#">Настройки</a>
         </button>
       </div>
     </div>
