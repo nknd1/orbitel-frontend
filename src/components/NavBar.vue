@@ -11,8 +11,7 @@
 
 
     <!-- Навигационная панель для мобильных устройств -->
-    <div v-else class="mobile-nav" style="height: 56px;">
-      <div>
+    <div v-else class="mobile-nav">
         <button>
             <a href="contracts">Мои договоры</a>
         </button>
@@ -20,7 +19,6 @@
           <a href="#">Настройки</a>
         </button>
       </div>
-    </div>
   </div>
 </template>
 
@@ -32,6 +30,7 @@ const isMobile = useMediaQuery('(max-width: 768px)')
 </script>
 
 <style scoped>
+
 /* Стили для ПК */
 .desktop-nav ul {
   display: flex;
@@ -53,6 +52,7 @@ const isMobile = useMediaQuery('(max-width: 768px)')
   bottom: 0;
   left: 0;
   right: 0;
+  flex: 1 30px;
   background-color: #fff;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -60,7 +60,7 @@ const isMobile = useMediaQuery('(max-width: 768px)')
 
 .mobile-nav ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   list-style: none;
   padding: 10px 0;
   margin: 0;
