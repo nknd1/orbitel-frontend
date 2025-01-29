@@ -8,8 +8,8 @@
 h2 {
   text-align: center; /* text-center */
   color: #3b82f6; /* text-blue-500 */
-  padding-top: 0.875rem; /* py-3.5 (14px) */
+  padding-top: 0.900rem; /* py-3.5 (14px) */
   padding-bottom: 0.875rem;
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.2rem; /* text-2xl */
 }
 </style>

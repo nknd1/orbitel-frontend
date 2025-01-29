@@ -18,13 +18,13 @@ const contract = computed<Contract | undefined>(() =>
 </script>
 
 <template>
-  <q-card v-if="contract" class="contract-details" title="Детали договора">
+  <div v-if="contract" class="contract-details" title="Детали договора">
     <p><strong>Номер договора:</strong> {{ contract.contractNumber }}</p>
     <p><strong>Тариф:</strong> {{ contract.tariff }}</p>
     <router-link to="/contracts">
-      <q-btn class="back-button">Назад к списку</q-btn>
+      <button class="back-button">Назад к списку</button>
     </router-link>
-  </q-card>
+  </div>
 </template>
 
 <style scoped>
@@ -44,6 +44,7 @@ const contract = computed<Contract | undefined>(() =>
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 5px;
+
 }
 .back-button:hover {
   background-color: #0056b3;

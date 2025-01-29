@@ -17,7 +17,7 @@ const goToDetails = (id: number) => {
 </script>
 
 <template>
-  <q-card>
+  <div class="contracts-list">
     <ul>
       <li v-for="contract in contracts" :key="contract.id" class="contract-item">
         <div class="contract-info">
@@ -27,7 +27,7 @@ const goToDetails = (id: number) => {
         </div>
       </li>
     </ul>
-  </q-card>
+  </div>
 </template>
 
 <style scoped>
@@ -35,10 +35,12 @@ const goToDetails = (id: number) => {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+
+  .contract-item {
+    margin-bottom: 15px;
+  }
 }
-.contract-item {
-  margin-bottom: 15px;
-}
+
 .contract-info {
   padding: 15px;
   border: 1px solid #ddd;
@@ -55,8 +57,10 @@ const goToDetails = (id: number) => {
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 5px;
+
+  .details-button:hover {
+    background-color: #1e73d1;
+  }
 }
-.details-button:hover {
-  background-color: #0056b3;
-}
+
 </style>
