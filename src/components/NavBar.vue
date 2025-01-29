@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar>
+  <div>
     <!-- Навигационная панель для ПК -->
     <nav v-if="!isMobile" class="desktop-nav">
       <ul>
@@ -12,18 +12,17 @@
 
     <!-- Навигационная панель для мобильных устройств -->
     <div v-else class="mobile-nav" style="height: 56px;">
-      <q-tabs>
-        <v-btn>
+      <div>
+        <button>
             <li><a href="contracts">Мои договоры</a></li>
-        </v-btn>
+        </button>
 
-        <v-btn>
+        <button>
           <li><a href="#">Настройки</a></li>
-        </v-btn>
-
-      </q-tabs>
+        </button>
+      </div>
     </div>
-  </v-toolbar>
+  </div>
 </template>
 
 <script setup lang="ts">
