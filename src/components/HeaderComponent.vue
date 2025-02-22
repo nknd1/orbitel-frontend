@@ -55,4 +55,7 @@ header a:hover {
 </style>
 
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+let a = "ауцауцуаццуа";
+
+</script>

@@ -2,7 +2,7 @@
   <HeaderComponent />
 </template>
 
-<style scoped lang="sass"></style>
+<style scoped></style>
 <script setup lang="ts">
 import HeaderComponent from '@/components/HeaderComponent.vue'
 // import FooterComponent from "@/components/FooterComponent.vue";

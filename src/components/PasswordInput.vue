@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+ const props = defineProps({
+  password: {type: String, required: true}
+ })
+</script>
 
 <template>
   <input type="password" id="password" required placeholder="Пароль" />
@@ -19,7 +23,7 @@ input {
   border-radius: 0.375rem; /* rounded */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
   transition: all 0.1s ease-in-out; /* transition duration-100 ease-in-out */
-  placeholder-color: #9ca3af; /* placeholder-gray-400 */
+  scrollbar-arrow-color: #9ca3af; /* placeholder-gray-400 */
 }
 
 input:focus {
